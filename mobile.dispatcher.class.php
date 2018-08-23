@@ -19,8 +19,8 @@
  * PHP 5.3.0 or higher is supported.
  *
  * @author    Andre Liechti, SysCo systemes de communication sa, <info@multiotp.net>
- * @version   2.0.0.0
- * @date      2015-01-23
+ * @version   2.0.0.1
+ * @date      2015-08-06
  * @since     2014-03-03
  * @copyright (c) 2014-2015 SysCo systemes de communication sa
  * @license   GNU Lesser General Public License
@@ -57,6 +57,7 @@
  *
  * Change Log
  *
+ *   2015-08-06 2.0.0.1 SysCo/al detectMobileFamily() method fixed to support a specific agent
  *   2015-01-23 2.0.0.0 SysCo/al Class enhanced and cleaned
  *   2014-03-03 1.0.0.0 SysCo/al Initial release
  *********************************************************************/
@@ -68,8 +69,8 @@ class MobileDispatcher
  * @brief     Class definition for MobileDispatcher handling.
  *
  * @author    Andre Liechti, SysCo systemes de communication sa, <info@multiotp.net>
- * @version   2.0.0.0
- * @date      2015-01-23
+ * @version   2.0.0.1
+ * @date      2015-08-06
  * @since     2014-03-03
  */
 {
@@ -88,8 +89,8 @@ class MobileDispatcher
      *                         (Android, iOS, WindowsPhone, BlackBerry, PalmOS, Other)
      *
      * @author  Andre Liechti, SysCo systemes de communication sa, <info@multiotp.net>
-     * @version 2.0.0.0
-     * @date    2015-01-23
+     * @version 2.0.0.1
+     * @date    2015-08-06
      * @since   2014-03-03
      */
     {
@@ -97,27 +98,27 @@ class MobileDispatcher
         
         $user_agent = (trim($agent) != '')?trim($agent):(isset($_SERVER['HTTP_USER_AGENT'])?$_SERVER['HTTP_USER_AGENT']:'');
         
-        if ((FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'Android'))) {
+        if ((FALSE !== stristr($user_agent,'Android'))) {
             $family = 'Android';
         }
-        elseif ((FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'iPhone')) ||
-                (FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'iPad')) ||
-                (FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'iPod'))) {
+        elseif ((FALSE !== stristr($user_agent,'iPhone')) ||
+                (FALSE !== stristr($user_agent,'iPad')) ||
+                (FALSE !== stristr($user_agent,'iPod'))) {
             $family = 'iOS';
         }
-        elseif ((FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'Windows Phone')) ||
-                (FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'Windows Mobile')) ||
-                (FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'IEMobile'))) {
+        elseif ((FALSE !== stristr($user_agent,'Windows Phone')) ||
+                (FALSE !== stristr($user_agent,'Windows Mobile')) ||
+                (FALSE !== stristr($user_agent,'IEMobile'))) {
             $family = 'WindowsPhone';
         }
-        elseif ((FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'BlackBerry')) ||
-                (FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'BB10')) ||
-                (FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'RIM Tablet')) ||
-                (FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'PlayBook'))) {
+        elseif ((FALSE !== stristr($user_agent,'BlackBerry')) ||
+                (FALSE !== stristr($user_agent,'BB10')) ||
+                (FALSE !== stristr($user_agent,'RIM Tablet')) ||
+                (FALSE !== stristr($user_agent,'PlayBook'))) {
             $family = 'BlackBerry';
         }
-        elseif ((FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'PalmSource')) ||
-                (FALSE !== stristr($_SERVER['HTTP_USER_AGENT'],'PalmOS'))) {
+        elseif ((FALSE !== stristr($user_agent,'PalmSource')) ||
+                (FALSE !== stristr($user_agent,'PalmOS'))) {
             $family = 'PalmOS';
         }
         return $family;

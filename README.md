@@ -15,7 +15,7 @@ families is displayed instead.
 (c) 2014-2015 SysCo systemes de communication sa  
 http://developer.sysco.ch/php/  
 
-Current build: 2.0.0.0 (2015-01-23)
+Current build: 2.0.0.1 (2015-08-06)
 
 
 # Usage
@@ -42,7 +42,7 @@ Current build: 2.0.0.0 (2015-01-23)
     ?>
 
 
-Check mobile.dispatcher.demo.php for a full implementation example.
+  Check mobile.dispatcher.demo.php for a full implementation example.
 
 
 You can support our open source projects with donations and sponsoring.
@@ -52,8 +52,7 @@ is always welcome even if it's as low as $1!
 You can also sponsor the development of a specific feature. Please contact
 us in order to discuss the detail of the implementation.
 
-
 [![Donate via PayPal](https://img.shields.io/badge/donate-paypal-87ceeb.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&currency_code=USD&business=paypal@sysco.ch&item_name=Donation%20for%20mobile-dispatcher%20project)
-*Please consider supporting this project by making a donation via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&currency_code=USD&business=paypal@sysco.ch&item_name=Donation%20for%20mobile-dispatcher%20project)*
+*Please consider supporting this project by making a donation via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&currency_code=USD&business=paypal@sysco.ch&item_name=Donation%20for%20mobile-dispatcher%20project)*  
 
 And for more PHP classes, have a look on [PHPclasses.org](http://syscoal.users.phpclasses.org/browse/), where a lot of authors are sharing their classes for free.
